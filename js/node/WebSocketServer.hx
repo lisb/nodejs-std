@@ -85,6 +85,6 @@ extern class WebSocketServer extends EventEmitter {
 
     private static function __init__() : Void untyped
 	{
-        var WebSocketServer = Node.require('websocket').server;
+//        var WebSocketServer = Node.require('websocket').server;
 	}
 }
