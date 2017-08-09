@@ -175,6 +175,8 @@ class Bytes {
 		var result:String="";
 		untyped __global__.__hxcpp_string_of_bytes(b,result,pos,len);
 		return result;
+		#elseif (nodejs || nodejs_std)
+		return b.toString(js.Node.NodeC.UTF8,pos,pos+len);
 		#else
 		var s = "";
 		var b = b;
@@ -199,8 +201,6 @@ class Bytes {
 			}
 		}
 		return s;
-    #else (nodejs || nodejs_std)
-       return b.toString(js.Node.UTF8,pos,pos+len);
 		#end
 	}
 
